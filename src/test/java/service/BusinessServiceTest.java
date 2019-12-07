@@ -37,5 +37,10 @@ public class BusinessServiceTest {
 
         //STEP 4: verifying input vs output
         Assertions.assertEquals(expectedOutput, actualResult);
+
+        // verify mock usage
+        Mockito.verify(service1).business1(3);
+        Mockito.verify(service2).business2(3);
+        Mockito.verifyNoMoreInteractions(service1, service2);
     }
 }
